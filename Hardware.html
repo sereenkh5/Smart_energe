@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitoring System For IQ-Think</title>
+
+    <!--vendor css ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!--Bootstrap ================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <!-- Style Sheet ================================================== -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Google Fonts ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- script ================================================== -->
+    <script src="js/modernizr.js"></script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light container-fluid py-3 position-fixed ">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  active px-3" aria-current="page"
+                                href="index.html">home</a>
+                        </li>
+                      
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Hardware.html">Hardware</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Software.html">Software</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Implementation.html">Implementation</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <li class="nav-item ms-2"><a href="Archeticture.html" class="dropdown-item text-uppercase btn btn-primary text-white py-2 px-3 ">Archeticture </a></li>
+
+                    </ul>
+
+                    <div class="d-flex mt-5 mt-lg-0 ps-lg-3 align-items-center justify-content-center ">
+                        <ul class="navbar-nav justify-content-end align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link px-3 phone-no" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M18.3274 22.5001C17.4124 22.5001 16.1271 22.1691 14.2024 21.0938C11.862 19.7813 10.0516 18.5696 7.72383 16.2479C5.47946 14.0049 4.38727 12.5527 2.85868 9.77115C1.1318 6.63052 1.42618 4.98427 1.75524 4.28068C2.14712 3.43974 2.72555 2.93677 3.47321 2.43755C3.89787 2.15932 4.34727 1.92081 4.81571 1.72505C4.86258 1.7049 4.90618 1.68568 4.94508 1.66833C5.17712 1.5638 5.52868 1.40583 5.97399 1.57458C6.27118 1.68615 6.53649 1.91443 6.9518 2.32458C7.80352 3.16458 8.96743 5.03537 9.3968 5.95412C9.68508 6.57333 9.87587 6.98208 9.87633 7.44052C9.87633 7.97724 9.60633 8.39115 9.27868 8.83787C9.21727 8.92177 9.15633 9.00193 9.09727 9.07974C8.74055 9.54849 8.66227 9.68396 8.71383 9.92583C8.81837 10.4119 9.5979 11.859 10.879 13.1372C12.1601 14.4155 13.5654 15.1458 14.0534 15.2499C14.3056 15.3038 14.4438 15.2222 14.9276 14.8529C14.997 14.7999 15.0682 14.7451 15.1427 14.6902C15.6424 14.3185 16.0371 14.0555 16.5612 14.0555H16.564C17.0201 14.0555 17.4106 14.2533 18.0574 14.5796C18.9012 15.0052 20.8282 16.1541 21.6734 17.0068C22.0845 17.4211 22.3137 17.6855 22.4257 17.9822C22.5945 18.429 22.4356 18.7791 22.332 19.0135C22.3146 19.0524 22.2954 19.0951 22.2752 19.1424C22.0779 19.61 21.838 20.0585 21.5585 20.4821C21.0602 21.2274 20.5554 21.8044 19.7126 22.1968C19.2798 22.4015 18.8062 22.5052 18.3274 22.5001Z"
+                                            fill="#313131" />
+                                    </svg>
+                               
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary ms-md-3"> IQ-Think </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="position-relative overflow-hidden py-4" style="background: url(images/bannner2.jpg);">
+        <!-- <div class="pattern-overlay pattern-right position-absolute">
+            <img src="images/pattern-hero.png" alt="pattern">
+        </div> -->
+        <div class="container py-5 mt-5">
+            <div class="row align-items-center py-5 mt-5">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <h6 class="text-white">Smart Energy Monitoring System</h6>
+                    <h2 class="text-white fw-bold display-2">Hardware</h2>
+                 <!---->   <p class="text-white">Reliable, real-time electricity consumption tracking for smarter decisions. Our system leverages cutting-edge AI models to predict usage patterns, detect anomalies, and optimize energy flow — helping you save money and reduce waste.</p>
+                    <ul class="list-unstyled">
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path
+                                        d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Smart automation integration 
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path
+                                        d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Real-time electricity consumption tracking
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path
+                                        d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Transparent data insights you can trust, anytime, anywhere
+
+
+                        </li>
+                    </ul> 
+                </div>
+                <div class=" col-md-5 offset-md-1">
+                
+            </div>
+        </div>
+    </section>
+      <div class="services-components text-center py-5 px-3">
+            <h6 class="text-white"></h6>
+            <h2 class="text-white fw-bold display-4 mb-4">Hardware Layer
+</h2>
+ <h2 class="text-white  display-4 mb-4">Physical components used to collect data from the environment</h2>
+            </div>
+<section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/R.jpg" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+        
+                    <h2 class=" fw-bold display-4 mb-3">ESP32 Microcontroller</h2>
+                    <p class="">
+         
+            <h5>Wi-Fi enabled microcontroller that collects sensor data and transmits it wirelessly. Programmed using Arduino IDE</h5>
+        
+            <hr>
+            
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+                </div>
+            </div>
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/sctt.webp" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+        
+                    <h2 class=" fw-bold display-4 mb-3">SCT-013 Current Sensor</h2>
+                    <p class="">
+         
+            <h5>Non-invasive current sensor that clamps around power cables to measure current consumption without direct electrical contact</h5>
+        
+            <hr>
+            
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+                </div>
+            </div>
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/41411-sxnlsq.jpg" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+        
+                    <h2 class=" fw-bold display-4 mb-3">ZMPT101B Voltage Sensor</h2>
+                    <p class="">
+         
+            <h5>Measures AC voltage levels with high accuracy and provides isolated measurement for safety</h5>
+        
+            <hr>
+            
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+                </div>
+            </div>
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/raspberry-pi-4-8go.jpg" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+        
+                    <h2 class=" fw-bold display-4 mb-3">Raspberry Pi 4</h2>
+                    <p class="">
+         
+            <h5>Serves as the Docker host device running our MQTT broker and data processing services</h5>
+        
+            <hr>
+            
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+                </div>
+            </div>
+        </div>
+        <section><table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Component</th>
+      <th>Model</th>
+      <th>Function</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <td>Microcontroller	</td>
+      <td>ESP32</td>
+      <td>Wi-Fi enabled, collects sensor data
+</td>
+ 
+    </tr>
+    <tr>
+      <td>Current Sensor		</td>
+      <td>SCT-013	</td>
+      <td>Measures electric current
+
+</td>
+ 
+    </tr>
+    <tr>
+      <td>Voltage Sensor</td>
+      <td>ZMPT101B</td>
+      <td>Measures electric voltage
+</td>
+ <tr>
+      <td>Power Meter IC	</td>
+      <td>HLW8012	</td>
+      <td>Accurate power calculation
+</td>
+ 
+    </tr>
+    <tr>
+      <td>Host Device	</td>
+      <td>Raspberry Pi 4	</td>
+      <td>Runs Docker containers
+</td>
+ 
+    </tr>
+    </tr>
+  </tbody>
+</table></section>
+       <section id="hardware-process">
+  <div class="container my-5 pb-5">
+    <h2 class="text-center fw-bold display-4 mb-5">Hardware Components & Process Flow</h2>
+
+    <div class="row justify-content-center align-items-start">
+      <!-- Accordion Column -->
+      <div class="col-md-6">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+
+          <!-- Q1: Hardware Components -->
+          <div class="accordion-item mt-3">
+            <h5 class="accordion-header border-0" id="headingOne">
+              <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 Hardware Components in the Diagram
+              </button>
+            </h5>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    <strong>Solar Panel</strong><br>
+                    The main power source of the system.<br>
+                    Converts sunlight into DC electricity to power components and charge the battery.
+                  </li>
+                  <li>
+                    <strong>Diode</strong><br>
+                    Prevents current from flowing back from the battery or circuits to the solar panel at night or in low light.
+                  </li>
+                  <li>
+                    <strong>DC-DC Converter</strong><br>
+                    Regulates the voltage coming from the solar panel to be suitable for the ESP32 and other components.
+                  </li>
+                  <li>
+                    <strong>ESP32 Microcontroller</strong><br>
+                    The brain of the system.<br>
+                    Receives data from sensors, processes it, and sends it via the internet to a server or platform (such as ThingsBoard).<br>
+                    Supports Wi-Fi, making it ideal for IoT projects.
+                  </li>
+                  <li>
+                    <strong>Energy Sensors (e.g., INA219)</strong><br>
+                    Measure voltage and current precisely.<br>
+                    Allow calculation of power consumption or generation from the solar system.
+                  </li>
+                  <li>
+                    <strong>Relay and Pump</strong><br>
+                    Relay: An electrically controlled switch operated by the ESP32 to turn devices on/off.<br>
+                    Pump: An example of a load that can be controlled by the system.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2: How the Process Works -->
+          <div class="accordion-item mt-3">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How the Process Works from Hardware to AI and Dashboard
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    <strong>Data Collection from Sensors</strong><br>
+                    The sensors (INA219) measure voltage and current.<br>
+                    They send readings to the ESP32 via the I2C protocol.
+                  </li>
+                  <li>
+                    <strong>Data Processing in ESP32</strong><br>
+                    The ESP32 calculates power = voltage × current.<br>
+                    It can also calculate total energy consumed or generated over time.
+                  </li>
+                  <li>
+                    <strong>Sending Data to the Cloud</strong><br>
+                    The ESP32 transmits data via Wi-Fi using protocols like MQTT or HTTP.<br>
+                    The data is sent to an IoT platform (such as ThingsBoard, AWS IoT, or Azure IoT).
+                  </li>
+                  <li>
+                    <strong>AI Data Analysis</strong><br>
+                    The stored data in the cloud is processed by an AI model.<br>
+                    The AI can:<br>
+                    - Predict future energy consumption.<br>
+                    - Detect anomalies or abnormal usage.<br>
+                    - Optimize energy usage based on historical patterns.
+                  </li>
+                  <li>
+                    <strong>Dashboard Visualization</strong><br>
+                    The IoT platform displays both real-time and historical data on an interactive dashboard.<br>
+                    The user can view:<br>
+                    - Live voltage and current readings.<br>
+                    - Energy consumed/generated.<br>
+                    - AI predictions for future usage.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3: Process Flow Summary -->
+          <div class="accordion-item mt-3">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Process Flow Summary
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+              <div class="accordion-body text-center fs-4">
+                 <ul>
+    <li>Solar energy is captured and converted into electrical power.</li>
+    <li>Voltage is regulated to meet system requirements.</li>
+    <li>Sensors measure voltage, current, and power metrics.</li>
+    <li>The ESP32 microcontroller processes sensor data.</li>
+    <li>Data is transmitted securely to a cloud platform via Wi-Fi.</li>
+    <li>AI algorithms analyze data to predict consumption patterns and detect anomalies.</li>
+    <li>Insights are displayed on an interactive dashboard for user decision-making and optimization.</li>
+  </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-md-5 offset-md-1 d-flex justify-content-center align-items-center">
+        <img src="images/Prototype.jpeg" alt="Hardware Diagram" class="img-fluid rounded shadow" />
+      </div>
+    </div>
+  </div>
+</section>
+          <div class="services-components text-center py-5 px-3">
+            <h6 class="text-white"></h6>
+            <h2 class="text-white fw-bold display-4 mb-4">Functions of this Layer</h2>
+
+            <div class="swiper testimonial-swiper mb-10">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-content ">
+                            <div class="col-md-0">
+                                <h5>↠ Captures real-world values from environment
+</h5>
+                              
+
+                            </div>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-md-3">
+               
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonial-content">
+                         <div class="col-md-0">
+                                <h5>↠ Converts analog signals to digital</h5>
+               
+
+                            </div>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-md-3">
+                         
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonial-content col-lg-4">
+                              <div class="col-md-0 ">
+                                <h5>↠ Sends data over MQTT protocol</h5>
+                             
+
+                            </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                           
+                            </div>
+                      
+                        </div>
+                    </div>
+    
+                            </div>
+                        </div>
+                    </div>
+             
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="services-components text-center py-5 px-3">
+            <h6 class="text-white"></h6>
+            <h2 class="text-white fw-bold display-4 mb-4">Sample Output
+</h2>
+
+            <div class="swiper testimonial-swiper mb-10">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-content ">
+                            <div class="col-md-0">
+                                <h5>↠ Current: 2.4 A
+</h5>
+                              
+
+                            </div>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-md-3">
+               
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonial-content">
+                         <div class="col-md-0">
+                                <h5>↠ Voltage: 220 V </h5>
+               
+
+                            </div>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-md-3">
+                         
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="swiper-slide testimonial-content col-lg-4">
+                              <div class="col-md-0 ">
+                                <h5>↠ Power: 520 W</h5>
+                             
+
+                            </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                           
+                            </div>
+                      
+                        </div>
+                    </div>
+    
+                            </div>
+                        </div>
+                    </div>
+             
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+  
+
+    <section id="footer">
+        <div class="container footer-container mt-5 pt-3">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+
+                <div class=" col-md-4 mt-5 mt-md-0 ">
+                    <img src="images/main-logo.png" alt="image" class="my-3">
+                    <p class="">Smart Energy Monitoring System © 2023 | AI + IoT Solution</p>
+                    <div class="d-flex align-items-center ">
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon active pe-4"
+                                icon="mdi:facebook"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:twitter"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:instagram"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:linkedin"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:youtube"></iconify-icon></a>
+                    </div>
+
+                </div>
+
+                <div class="col-md-2 offset-md-1">
+                    <h5 class="py-3">Our services</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Real-Time Energy Monitoring</a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">AI-Powered Forecasting & Anomaly Detection </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">Smart Automation & Control</a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">  Bill & Payment Management</a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">Sustainability Recommendations</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 ">
+                    <h5 class="py-3">Quick links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Our locations </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> About us </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Our gallery </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Privacy Policy</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Contact us </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 ">
+                    <h5 class="py-3">Contact Info</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item d-flex mb-3">
+                            <iconify-icon class="contact-icon pe-3" icon="ion:location"></iconify-icon>
+                            <a href="#" class="nav-link p-0 "> Queen Rania Street, AMM, JO </a>
+                        </li>
+                        <li class="nav-item d-flex mb-3">
+                            <iconify-icon class="contact-icon pe-3" icon="ion:call"></iconify-icon><a href="#"
+                                class="nav-link p-0 "> (+962) 795381103</a>
+                        </li>
+                        <li class="nav-item d-flex mb-3">
+                            <iconify-icon class="contact-icon pe-3" icon="ion:mail"></iconify-icon><a href="#"
+                                class="nav-link p-0 "> info@yourdomain.com </a>
+                        </li>
+
+                    </ul>
+                </div> 
+
+
+
+            </footer>
+        </div>
+
+
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
+                <div class="col-md-6 d-flex align-items-center">
+
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                </div>
+
+            </footer>
+        </div>
+    </section> 
+
+    <!-- script ================================================== -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+
+</body>
+
+</html>

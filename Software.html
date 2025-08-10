@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitoring System For IQ-Think</title>
+
+    <!--vendor css ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!--Bootstrap ================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <!-- Style Sheet ================================================== -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Google Fonts ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- script ================================================== -->
+    <script src="js/modernizr.js"></script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light container-fluid py-3 position-fixed ">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  active px-3" aria-current="page"
+                                href="index.html">home</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Hardware.html">Hardware</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Software.html">Software</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Implementation.html">Implementation</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-uppercase  px-3" href="Gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <li class="nav-item ms-2"><a href="Archeticture.html" class="dropdown-item text-uppercase btn btn-primary text-white py-2 px-3 ">Archeticture </a></li>
+
+                    </ul>
+
+                    <div class="d-flex mt-5 mt-lg-0 ps-lg-3 align-items-center justify-content-center ">
+                        <ul class="navbar-nav justify-content-end align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link px-3 phone-no" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M18.3274 22.5001C17.4124 22.5001 16.1271 22.1691 14.2024 21.0938C11.862 19.7813 10.0516 18.5696 7.72383 16.2479C5.47946 14.0049 4.38727 12.5527 2.85868 9.77115C1.1318 6.63052 1.42618 4.98427 1.75524 4.28068C2.14712 3.43974 2.72555 2.93677 3.47321 2.43755C3.89787 2.15932 4.34727 1.92081 4.81571 1.72505C4.86258 1.7049 4.90618 1.68568 4.94508 1.66833C5.17712 1.5638 5.52868 1.40583 5.97399 1.57458C6.27118 1.68615 6.53649 1.91443 6.9518 2.32458C7.80352 3.16458 8.96743 5.03537 9.3968 5.95412C9.68508 6.57333 9.87587 6.98208 9.87633 7.44052C9.87633 7.97724 9.60633 8.39115 9.27868 8.83787C9.21727 8.92177 9.15633 9.00193 9.09727 9.07974C8.74055 9.54849 8.66227 9.68396 8.71383 9.92583C8.81837 10.4119 9.5979 11.859 10.879 13.1372C12.1601 14.4155 13.5654 15.1458 14.0534 15.2499C14.3056 15.3038 14.4438 15.2222 14.9276 14.8529C14.997 14.7999 15.0682 14.7451 15.1427 14.6902C15.6424 14.3185 16.0371 14.0555 16.5612 14.0555H16.564C17.0201 14.0555 17.4106 14.2533 18.0574 14.5796C18.9012 15.0052 20.8282 16.1541 21.6734 17.0068C22.0845 17.4211 22.3137 17.6855 22.4257 17.9822C22.5945 18.429 22.4356 18.7791 22.332 19.0135C22.3146 19.0524 22.2954 19.0951 22.2752 19.1424C22.0779 19.61 21.838 20.0585 21.5585 20.4821C21.0602 21.2274 20.5554 21.8044 19.7126 22.1968C19.2798 22.4015 18.8062 22.5052 18.3274 22.5001Z"
+                                            fill="#313131" />
+                                    </svg>
+                                   
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary ms-md-3">IQ-Think</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="position-relative overflow-hidden py-4" style="background: url(images/bannner2.jpg);">
+        <!-- <div class="pattern-overlay pattern-right position-absolute">
+            <img src="images/pattern-hero.png" alt="pattern">
+        </div> -->
+        <div class="container py-5 mt-5">
+            <div class="row align-items-center py-5 mt-5">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <h6 class="text-white">Smart Energy Monitoring System</h6>
+                    <h2 class="text-white fw-bold display-2">Software</h2>
+                 <!---->   <p class="text-white">Reliable, real-time electricity consumption tracking for smarter decisions. Our system leverages cutting-edge AI models to predict usage patterns, detect anomalies, and optimize energy flow — helping you save money and reduce waste.</p>
+                    <ul class="list-unstyled">
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path
+                                        d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Smart automation integration 
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path
+                                        d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Real-time electricity consumption tracking
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path
+                                        d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Transparent data insights you can trust, anytime, anywhere
+
+
+                        </li>
+                    </ul> 
+                </div>
+                <div class=" col-md-5 offset-md-1">
+                
+            </div>
+        </div>
+    </section>
+    <section> <div class="services-components text-center py-5 px-3">
+            <h6 class="text-white"></h6>
+            <h2 class="text-white fw-bold display-4 mb-4">Software Layer</h2>
+ <h2 class="text-white fw-bold display-4 mb-4">Tools and Software Used</h2>
+            <div class="swiper testimonial-swiper mb-10">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-content ">
+                            <div class="col-md-0">
+                               
+                              
+
+                            </div></section>
+
+   <section id="testimonial" class=" position-relative  py-5">
+
+        <div class="testimonial-pattern-overlay pattern-left position-absolute">
+            <img src="images/pattern-testimonial.png" alt="pattern">
+        </div>
+        <div class="testimonial-pattern-overlay pattern-right position-absolute">
+            <img src="images/right-pattern-testimonial.png" alt="pattern">
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/thingsboard_logo.png" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+                    <h6 class=""></h6>
+                    <h2 class=" fw-bold display-4 mb-3">ThingsBoard
+</h2>
+                    <p class="">
+       An integrated Internet of Things (IoT) platform used to collect, display, and analyze energy consumption data from multiple devices and sensors in real time. This platform is ideal for smart energy monitoring as it provides advanced tools to understand and improve energy usage.
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+       <section id="testimonial" class=" position-relative  py-5">
+
+        <div class="testimonial-pattern-overlay pattern-left position-absolute">
+            <img src="images/pattern-testimonial.png" alt="pattern">
+        </div>
+        <div class="testimonial-pattern-overlay pattern-right position-absolute">
+            <img src="images/right-pattern-testimonial.png" alt="pattern">
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/Docker.webp" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+                    <h6 class=""></h6>
+                    <h2 class=" fw-bold display-4 mb-3">Docker</h2>
+                    <p class="">
+          A tool for packaging applications into containers that ensure independent and smooth operation on any environment. Docker is used in the system to connect cloud computing and various services (such as databases, ThingsBoard platform, servers) in an organized and scalable way.
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+       <section id="testimonial" class=" position-relative  py-5">
+
+        <div class="testimonial-pattern-overlay pattern-left position-absolute">
+            <img src="images/pattern-testimonial.png" alt="pattern">
+        </div>
+        <div class="testimonial-pattern-overlay pattern-right position-absolute">
+            <img src="images/right-pattern-testimonial.png" alt="pattern">
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/Arduino.webp" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+                    <h6 class=""></h6>
+                    <h2 class=" fw-bold display-4 mb-3">Arduino IDE
+</h2>
+                    <p class="">
+         An open-source development environment used to write and upload code to microcontrollers like the ESP32. It provides an easy interface to program sensors, read data, and convert signals into digital values.
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+       <section id="testimonial" class=" position-relative  py-5">
+
+        <div class="testimonial-pattern-overlay pattern-left position-absolute">
+            <img src="images/pattern-testimonial.png" alt="pattern">
+        </div>
+        <div class="testimonial-pattern-overlay pattern-right position-absolute">
+            <img src="images/right-pattern-testimonial.png" alt="pattern">
+        </div>
+        <section id="about">
+        <div class="container py-5">
+            <div class="row align-items-center py-5">
+                <div class=" col-md-6 ps-md-5">
+                    <img src="images/VSCODE.webp" alt="image" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-4 py-5">
+                    <h6 class=""></h6>
+                    <h2 class=" fw-bold display-4 mb-3">Visual Studio Code
+</h2>
+                    <p class="">
+         An advanced code editor that supports multiple programming languages and offers extensions to help write more complex code, such as Python, as well as tools for integrating Docker and managing software projects.
+                    <a href="about.html" class="btn btn-primary service-btn mt-3"></a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="faq">
+    <div class="container my-5 pb-5">
+        <h6 class="text-center"></h6>
+        <h2 class="text-center fw-bold display-4 mb-5">Let’s Clear Things Up</h2>
+
+        <div class="accordion col-md-8 offset-md-2" id="accordionPanelsStayOpenExample">
+
+            <!-- Q1 -->
+            <div class="accordion-item mt-3">
+                <h5 class="accordion-header border-0" id="headingOne">
+                    <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How Does the ThingsBoard Dashboard Work?
+                    </button>
+                </h5>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                         <ul>
+                <li><strong>Real-time Consumption Data Display:</strong> The dashboard shows energy data (such as voltage, current, power, and energy consumption) in an interactive graphical format using charts and time-series graphs. This data comes directly from sensors via the MQTT protocol.</li>
+                                <li><strong>Alerts and Notifications:</strong> The platform allows setting custom alert rules when consumption exceeds certain thresholds or when system faults occur, such as overcurrent or undervoltage. Alerts are sent to users via email or instant messaging.</li>
+                <li><strong>Historical Data Analysis:</strong> ThingsBoard stores data over long periods, enabling users to analyze trends, identify peak times, and detect unusual consumption patterns.</li>
+                <li><strong>Integration with Other Systems:</strong> The platform can be connected to external applications or used to generate custom reports via REST API, making it flexible and scalable for different environments.</li>
+            </ul>
+            
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        System Workflow
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                    <div class="accordion-body">
+                        <ul>
+                <li><strong>Data Collection:</strong> Sensors (such as ESP32 with current and voltage sensors) send data to ThingsBoard through an MQTT broker.</li>
+                <li><strong>Processing:</strong> ThingsBoard receives the data, performs real-time analysis, and stores it in a dedicated database.</li>
+                <li><strong>Display and Interaction:</strong> Data appears on the user dashboard with options to filter data, select time periods, and view detailed reports.</li>
+                <li><strong>Alerts:</strong> When data meets predefined conditions, alerts are automatically triggered.</li>
+            </ul>
+            
+            <p>In this way, ThingsBoard enables users to accurately and efficiently monitor energy consumption, helping reduce waste and improve energy efficiency in residential or industrial environments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How is the ESP32 programmed?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                    <div class="accordion-body">
+                        <ul>
+                <li>Code is written using Arduino IDE or VS Code (with PlatformIO or Arduino plugins) to upload firmware to the ESP32 microcontroller.</li>
+                <li>The code reads values from sensors (current, voltage, power) via ADC ports or suitable protocols.</li>
+                <li>Analog signals are converted into digital values, then formatted into suitable data structures.</li>
+                <li>An MQTT library is used in the code to connect to the internet and continuously send data to the MQTT broker via Wi-Fi.</li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How does data transfer happen (MQTT protocol)?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+                    <div class="accordion-body">
+                        <ul>
+                <li>MQTT is a lightweight messaging protocol suitable for resource-constrained devices.</li>
+                <li>After reading the data, the ESP32 publishes this data to an MQTT broker (a middleware server) under a specific topic.</li>
+                <li>Server applications like ThingsBoard subscribe to these topics and receive the data.</li>
+                <li>Other software or applications can also subscribe to the same topics to receive real-time data for analysis or user display.</li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Role of Docker and its integration with services
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
+                    <div class="accordion-body">
+                      <ul>
+                <li>Applications and services such as the MQTT broker, ThingsBoard platform, and databases are packaged inside Docker containers.</li>
+                <li>This allows these services to run independently and separately from the underlying system environment, enabling easy deployment and distribution.</li>
+                <li>Docker simplifies managing updates, scaling, and backups of these services.</li>
+                <li>Within the system, Docker connects the data sent from ESP32 via the MQTT broker and ensures its delivery to ThingsBoard and then to the graphical user interface (dashboard) and applications.</li>
+            </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<hr>
+<section id="ai-algorithm">
+    <div class="container my-5 pb-5">
+        <h2 class="text-center fw-bold display-4 mb-5">AI & Algorithm Usage</h2>
+
+        <div class="accordion col-md-8 offset-md-2" id="accordionAI">
+
+            <!-- Model Type -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI1">
+                    <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI1" aria-expanded="true" aria-controls="collapseAI1">
+                        AI Model Type
+                    </button>
+                </h2>
+                <div id="collapseAI1" class="accordion-collapse collapse show" aria-labelledby="headingAI1">
+                    <div class="accordion-body">
+                        Regression model for predictive analytics.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purpose -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI2">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI2" aria-expanded="false" aria-controls="collapseAI2">
+                        Purpose
+                    </button>
+                </h2>
+                <div id="collapseAI2" class="accordion-collapse collapse" aria-labelledby="headingAI2">
+                    <div class="accordion-body">
+                        To forecast energy consumption and detect abnormal spikes in usage.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Data -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI3">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI3" aria-expanded="false" aria-controls="collapseAI3">
+                        Input Data
+                    </button>
+                </h2>
+                <div id="collapseAI3" class="accordion-collapse collapse" aria-labelledby="headingAI3">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Historical energy readings with timestamps (kWh values)</li>
+                            <li>Time-related features (time of day, day of week)</li>
+                            <li>Seasonal patterns for periodic fluctuations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Output -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI4">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI4" aria-expanded="false" aria-controls="collapseAI4">
+                        Output
+                    </button>
+                </h2>
+                <div id="collapseAI4" class="accordion-collapse collapse" aria-labelledby="headingAI4">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Predicted energy consumption (numerical value)</li>
+                            <li>Anomaly detection alerts (Boolean output)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hosting Environment -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI5">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI5" aria-expanded="false" aria-controls="collapseAI5">
+                        Hosting Environment
+                    </button>
+                </h2>
+                <div id="collapseAI5" class="accordion-collapse collapse" aria-labelledby="headingAI5">
+                    <div class="accordion-body">
+                        Model deployed on cloud platforms (Google Cloud or AWS) for scalability and real-time access.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inference Trigger -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI6">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI6" aria-expanded="false" aria-controls="collapseAI6">
+                        Inference Trigger
+                    </button>
+                </h2>
+                <div id="collapseAI6" class="accordion-collapse collapse" aria-labelledby="headingAI6">
+                    <div class="accordion-body">
+                        Real-time predictions generated every 5 minutes for timely insights.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training and Testing -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI7">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI7" aria-expanded="false" aria-controls="collapseAI7">
+                        Training and Testing
+                    </button>
+                </h2>
+                <div id="collapseAI7" class="accordion-collapse collapse" aria-labelledby="headingAI7">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Training data from real ESP32 sensors</li>
+                            <li>Preprocessing: resampling, normalization, outlier filtering</li>
+                            <li>Tools: scikit-learn, Jupyter notebooks, pandas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI8">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI8" aria-expanded="false" aria-controls="collapseAI8">
+                        Performance Metrics
+                    </button>
+                </h2>
+                <div id="collapseAI8" class="accordion-collapse collapse" aria-labelledby="headingAI8">
+                    <div class="accordion-body">
+                        Accuracy evaluated using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Limitations -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingAI9">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseAI9" aria-expanded="false" aria-controls="collapseAI9">
+                        Limitations
+                    </button>
+                </h2>
+                <div id="collapseAI9" class="accordion-collapse collapse" aria-labelledby="headingAI9">
+                    <div class="accordion-body">
+                        Prediction accuracy decreases during sudden, random consumption events not following historical patterns.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<hr>
+<section id="integration">
+    <div class="container my-5 pb-5">
+        <h2 class="text-center fw-bold display-4 mb-5">Integration Between Hardware & Software</h2>
+
+        <div class="accordion col-md-8 offset-md-2" id="accordionIntegration">
+
+            <!-- Data Flow -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingInt1">
+                    <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseInt1" aria-expanded="true" aria-controls="collapseInt1">
+                        Data Flow
+                    </button>
+                </h2>
+                <div id="collapseInt1" class="accordion-collapse collapse show" aria-labelledby="headingInt1">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>ESP32 reads sensor values (current, voltage, power) every second.</li>
+                            <li>Data sent via MQTT over Wi-Fi to an MQTT broker running inside a Docker container.</li>
+                            <li>Python script subscribes to MQTT topic to receive sensor data, then:
+                                <ul>
+                                    <li>Parses incoming JSON payload.</li>
+                                    <li>Cleans and analyzes the data.</li>
+                                    <li>Sends processed data via REST API to the cloud and dashboard platform.</li>
+                                </ul>
+                            </li>
+                            <li>Data stored securely in Cloud Storage and processed by AI prediction engine.</li>
+                            <li>Results and insights displayed on:
+                                <ul>
+                                    <li><strong>ThingsBoard dashboard</strong> for administrators and companies.</li>
+                                    <li><strong>Mobile app</strong> for end-users (alerts + interactive charts).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Components -->
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="headingInt2">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseInt2" aria-expanded="false" aria-controls="collapseInt2">
+                        Code Components
+                    </button>
+                </h2>
+                <div id="collapseInt2" class="accordion-collapse collapse" aria-labelledby="headingInt2">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><code>mqtt_client.py</code> — Manages reception of data sent from ESP32 over MQTT.</li>
+                            <li><code>energy_predictor.py</code> — Contains AI logic and runs consumption predictions.</li>
+                            <li><code>api_gateway.py</code> — Handles HTTP API endpoints for UI and mobile app access.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<hr>  
+    <section id="footer">
+        <div class="container footer-container mt-5 pt-3">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+
+                <div class=" col-md-4 mt-5 mt-md-0 ">
+                    <img src="images/main-logo.png" alt="image" class="my-3">
+                    <p class="">Smart Energy Monitoring System © 2023 | AI + IoT Solution</p>
+                    <div class="d-flex align-items-center ">
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon active pe-4"
+                                icon="mdi:facebook"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:twitter"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:instagram"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:linkedin"></iconify-icon></a>
+                        <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
+                                icon="mdi:youtube"></iconify-icon></a>
+                    </div>
+
+                </div>
+
+                <div class="col-md-2 offset-md-1">
+                    <h5 class="py-3">Our services</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Real-Time Energy Monitoring</a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">AI-Powered Forecasting & Anomaly Detection </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">Smart Automation & Control</a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">  Bill & Payment Management</a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 ">Sustainability Recommendations</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 ">
+                    <h5 class="py-3">Quick links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Our locations </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> About us </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Our gallery </a>
+                        </li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Privacy Policy</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link fw-normal p-0 "> Contact us </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 ">
+                    <h5 class="py-3">Contact Info</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item d-flex mb-3">
+                            <iconify-icon class="contact-icon pe-3" icon="ion:location"></iconify-icon>
+                            <a href="#" class="nav-link p-0 "> Queen Rania Street, AMM, JO </a>
+                        </li>
+                        <li class="nav-item d-flex mb-3">
+                            <iconify-icon class="contact-icon pe-3" icon="ion:call"></iconify-icon><a href="#"
+                                class="nav-link p-0 "> (+962) 795381103</a>
+                        </li>
+                        <li class="nav-item d-flex mb-3">
+                            <iconify-icon class="contact-icon pe-3" icon="ion:mail"></iconify-icon><a href="#"
+                                class="nav-link p-0 "> info@yourdomain.com </a>
+                        </li>
+
+                    </ul>
+                </div> 
+
+
+
+            </footer>
+        </div>
+
+
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
+                <div class="col-md-6 d-flex align-items-center">
+
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                </div>
+
+            </footer>
+        </div>
+    </section> 
+
+    <!-- script ================================================== -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+
+</body>
+
+</html>
